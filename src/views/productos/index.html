@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %} {% block titulo %} Productos {% endblock %} {% block contenido %}
+<h1 class="text-center">
+    LISTADO DE PRODUCTOS
+</h1>
+<a class="btn btn-outline-dark" role="button" href="{{url_for('index') }}">Inicio</a>
+<br>
+<br>
+<table class="text-center table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio_Venta</th>
+            <th>Precio_Compra</th>
+            <th>Estado</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td> {{producto[0]}} </td>
+            <td> {{producto[1]}} </td>
+            <td> {{producto[2]}} </td>
+            <td> {{producto[3]}} </td>
+            <td> {{producto[4]}} </td>
+            <td> {{producto[5]}} </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a class="btn btn-outline-dark" role="button" href="{{url_for('crear_producto') }}">Crear</a> {% endblock %}
