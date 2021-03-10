@@ -12,10 +12,17 @@ class productosModel():
 
         return productos
 
-    def crear(self, nombre, descripcion, precio_venta, precio_compra, estado):
+    def crear(self, nombre, descripcion, precio_venta, precio_compra, ganancia, estado):
         cursor = DB.cursor()
 
-        cursor.execute('insert into productos(nombre, descripcion, precio_venta, precio_compra, estado) values(?, ?, ?, ?, ?)',(nombre, descripcion, precio_venta, precio_compra, estado,))
+        cursor.execute('insert into productos(nombre, descripcion, precio_venta, precio_compra,ganancia, estado) values(?, ?, ?, ?, ?, ?)',(nombre, descripcion, precio_venta, precio_compra, ganancia, estado,))
+
+        cursor.close()
+
+    def editar(self,nombre, descripcion, precio_venta, precio_compra,ganancia, estado,Id):
+        cursor = DB.cursor()
+
+        cursor.execute('update productos set nombre=?, descripcion=?, precio_venta=?, precio_compra=?, ganancia=?, estado=? where Id=?',(nombre, descripcion, precio_venta, precio_compra,ganancia, estado,Id))
 
         cursor.close()
         
