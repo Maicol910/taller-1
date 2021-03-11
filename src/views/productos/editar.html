@@ -2,39 +2,38 @@
 <h1 class="text-center">
     EDITAR PRODUCTO
 </h1>
-<form action="{{editar_produc}}" method="POST">
-
+<form action="{{ url_for('editar_produc') }}" method="POST">
     <div class="mb-3 fw-bold">
         <label for="Id">ID</label>
-        <input type="text" placeholder="Ingresa el (ID) a editar" class="form-control " id="Id" name="Id">
+        <input type="text" placeholder="Ingresa el (ID) a editar" required class="form-control " id="Id" name="Id">
     </div>
     <div class="mb-3 fw-bold">
         <label for="nombre">Nombre</label>
-        <input type="text" class="form-control " id="nombre" name="nombre">
+        <input type="text" class="form-control" required id="nombre" name="nombre">
     </div>
 
-    <div class="mb-3 fw-bold">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" class="form-control " id="descripcion" name="descripcion">
+    <div class=" mb-3 fw-bold ">
+        <label for="descripcion ">Descripcion</label>
+        <input type="text" class="form-control " required id="descripcion" name="descripcion">
     </div>
 
-    <div class="mb-3 fw-bold">
-        <label for="precio_compra">Precio_compra</label>
-        <input type="number" class="form-control" id="precio_compra" name="precio_compra">
+    <div class="mb-3 fw-bold ">
+        <label for="precio_compra ">Precio_compra</label>
+        <input type="number" class="form-control " required id="precio_compra" name="precio_compra">
     </div>
 
-    <div class="mb-3 fw-bold">
-        <label for="precio_venta">Precio_venta</label>
-        <input type="number" class="form-control" id="precio_venta" name="precio_venta">
+    <div class="mb-3 fw-bold ">
+        <label for="precio_venta ">Precio_venta</label>
+        <input type="number" class="form-control " required id="precio_venta" name="precio_venta">
     </div>
 
-    <div class="mb-3 fw-bold">
-        <label for="ganancia">Ganancia %</label>
-        <input type="number" class="form-control" id="ganancia" name="ganancia">
+    <div class="mb-3 fw-bold ">
+        <label for="ganancia ">Ganancia %</label>
+        <input type="number" class="form-control" required id="ganancia" name="ganancia">
     </div>
 
-    <div class="mb-3 fw-bold">
-        <label for="estado">Estado:</label>
+    <div class="mb-3 fw-bold ">
+        <label for="estado ">Estado:</label>
         <select class="form-select " required name="estado" id="estado">
                 <option required value=" ">Seleccione una opcion</option>
                 <option value="Activo">Activo</option>
@@ -43,8 +42,8 @@
     </div>
 
     <center>
-        <button class="btn btn-outline-dark " type="submit ">Guardar </button>
-        <a class="btn btn-outline-dark " role="button " href="{{url_for( 'productos') }} ">volver</a>
+        <button class="btn btn-outline-dark" type="submit">Guardar </button>
+        <a class="btn btn-outline-dark" role="button" href="{{url_for( 'productos') }} ">volver</a>
     </center>
 
 </form>

@@ -41,7 +41,7 @@ def editar_produc():
     if request.method == 'GET':
         # mostrar el formulario de edicion
         return render_template('productos/editar.html')
-    
+
     Id = request.form.get('Id')
     nombre = request.form.get('nombre')
     descripcion = request.form.get('descripcion')
@@ -52,6 +52,6 @@ def editar_produc():
 
     ProductosModel = productosModel()
 
-    ProductosModel.editar(nombre, descripcion, precio_venta, precio_compra,ganancia, estado,Id)
-    
+    ProductosModel.editar(Id,nombre, descripcion, precio_venta, precio_compra,ganancia, estado)
+        
     return redirect(url_for('productos'))

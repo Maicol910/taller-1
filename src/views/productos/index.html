@@ -2,8 +2,11 @@
 <h1 class="text-center">
     LISTADO DE PRODUCTOS
 </h1>
-<a class="btn btn-outline-dark" role="button" href="{{url_for('index') }}">Inicio</a>
-<br>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a class="btn btn-outline-dark" role="button" href="{{url_for('index') }}">Inicio</a>
+    <a aria-disabled="true" class="d-grid gap-2 col-6 mx-auto btn btn-outline-dark" role="button" href="{{url_for('crear_producto') }}">Crear Productos</a>
+    <td> <a aria-disabled="true" class="gap-2 col-6 d-grid mx-auto btn btn-outline-dark" role="button" href="{{url_for('editar_produc')}}">Editar Productos</a></td>
+</div>
 <br>
 <table class="text-center table table-dark table-bordered table-striped">
     <thead>
@@ -28,12 +31,10 @@
             <td> {{producto[4]}} </td>
             <td> {{producto[5]}}% </td>
             <td> {{producto[6]}} </td>
+            <!--<td> <a aria-disabled="true" class="btn-sm d-grid mx-auto btn btn-outline-light" role="button" href="{{url_for('editar_produc',id=producto[0])}}">Editar</a></td>
+            -->
         </tr>
         {% endfor %}
     </tbody>
 </table>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <a aria-disabled="true" class="d-grid gap-2 col-6 mx-auto btn btn-outline-dark" role="button" href="{{url_for('crear_producto') }}">Crear Productos</a>
-    <a aria-disabled="true" class="d-grid gap-2 col-6 mx-auto btn btn-outline-dark" role="button" href="{{url_for('editar_produc') }}">Editar Productos</a>
-</div>
 {% endblock %}
