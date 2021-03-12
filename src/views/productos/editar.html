@@ -2,11 +2,7 @@
 <h1 class="text-center">
     EDITAR PRODUCTO
 </h1>
-<form action="{{ url_for('editar_produc') }}" method="POST">
-    <div class="mb-3 fw-bold">
-        <label for="Id">ID</label>
-        <input type="text" placeholder="Ingresa el (ID) a editar" required class="form-control " id="Id" name="Id">
-    </div>
+<form method="POST">
     <div class="mb-3 fw-bold">
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control" required id="nombre" name="nombre">
@@ -14,7 +10,7 @@
 
     <div class=" mb-3 fw-bold ">
         <label for="descripcion ">Descripcion</label>
-        <input type="text" class="form-control " required id="descripcion" name="descripcion">
+        <textarea type="text" class="form-control " required id="descripcion" name="descripcion"></textarea>
     </div>
 
     <div class="mb-3 fw-bold ">

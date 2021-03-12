@@ -19,10 +19,10 @@ class productosModel():
 
         cursor.close()
 
-    def editar(self,Id,nombre, descripcion, precio_venta, precio_compra,ganancia, estado):
+    def editar(self,id,nombre, descripcion, precio_venta, precio_compra,ganancia, estado):
         cursor = DB.cursor()
 
-        cursor.execute('update productos set nombre=?, descripcion=?, precio_venta=?, precio_compra=?, ganancia=?, estado=? where Id=?',(Id,nombre, descripcion, precio_venta, precio_compra,ganancia, estado,))
+        cursor.execute('update productos set nombre=?, descripcion=?, precio_venta=?, precio_compra=?, ganancia=?, estado=? where id=?',(nombre, descripcion, precio_venta, precio_compra,ganancia, estado,id,))
 
         cursor.close()
         
